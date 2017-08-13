@@ -221,7 +221,8 @@ PRODUCT_PACKAGES += \
     init.qcom.ril.sh \
     init.qcom.bt.sh \
     init.qcom.fm.sh \
-    wlan_carrier_bin.sh
+    wlan_carrier_bin.sh \
+    init.livedisplay.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \

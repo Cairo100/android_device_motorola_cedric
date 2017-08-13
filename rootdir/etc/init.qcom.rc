@@ -839,6 +839,14 @@ service ssr_setup /system/bin/ssr_setup
 on property:persist.sys.ssr.restart_level=*
     start ssr_setup
 
+service stopld /system/bin/sh /init.livedisplay.sh
+    class main
+    user root
+    oneshot
+
+on property:sys.boot_completed=1
+    start stopld
+
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
